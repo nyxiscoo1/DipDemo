@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{34147678-6E39-4911-9969-4AA246DB2923}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DipDemo.Cataloguer</RootNamespace>
+    <AssemblyName>DipDemo.Cataloguer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>DipDemo.Cataloguer.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\lib\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppContext.cs" />
+    <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Core\Book.cs" />
+    <Compile Include="Core\Catalogue.cs" />
+    <Compile Include="Core\ValidationResult.cs" />
+    <Compile Include="Events\CatalogueOpenedEvent.cs" />
+    <Compile Include="Infrastructure\AppController\IRequestData.cs" />
+    <Compile Include="Infrastructure\Presentation\EventBinding\WinForms\DataGridViewSelectionChangedEventBinder.cs" />
+    <Compile Include="Presentation\EditBook\EditBookPresenter.cs" />
+    <Compile Include="Presentation\EditBook\EditBookView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\EditBook\EditBookView.Designer.cs">
+      <DependentUpon>EditBookView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\EditBook\IEditBookView.cs" />
+    <Compile Include="Events\BookUpdatedEvent.cs" />
+    <Compile Include="Requests\EditBookRequest.cs" />
+    <Compile Include="Services\Serializers\BinaryCatalogueSerializer.cs" />
+    <Compile Include="Events\CatalogueSavedEvent.cs" />
+    <Compile Include="Services\Serializers\ICatalogueSerializer.cs" />
+    <Compile Include="RequestHandlers\SaveCatalogueAsRequestHandler.cs" />
+    <Compile Include="Services\Deserializers\BinaryCatalogueDeserializer.cs" />
+    <Compile Include="Infrastructure\AppController\Environment\FileSystem.cs" />
+    <Compile Include="Services\Deserializers\ICatalogueDeserializer.cs" />
+    <Compile Include="Infrastructure\AppController\Environment\IFileSystem.cs" />
+    <Compile Include="RequestHandlers\OpenCatalogueRequestHandler.cs" />
+    <Compile Include="RequestHandlers\SaveCatalogueRequesthandler.cs" />
+    <Compile Include="Requests\OpenCatalogueRequest.cs" />
+    <Compile Include="Requests\CloseCatalogueRequest.cs" />
+    <Compile Include="RequestHandlers\CloseCatalogueRequestHandler.cs" />
+    <Compile Include="RequestHandlers\NewCatalogueRequestHandler.cs" />
+    <Compile Include="Requests\SaveCatalogueRequest.cs" />
+    <Compile Include="Requests\SaveCatalogueAsRequest.cs" />
+    <Compile Include="Requests\NewCatalogueRequest.cs" />
+    <Compile Include="Presentation\ViewCatalogue\CataloguePresenter.cs" />
+    <Compile Include="DefaultRepository.cs" />
+    <Compile Include="Presentation\ViewCatalogue\CatalogueView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\ViewCatalogue\CatalogueView.Designer.cs">
+      <DependentUpon>CatalogueView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ViewCatalogue\ICatalogueView.cs" />
+    <Compile Include="Presentation\AppShell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\AppShell.Designer.cs">
+      <DependentUpon>AppShell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\AppController\ApplicationController.cs" />
+    <Compile Include="Infrastructure\AppController\IApplicationController.cs" />
+    <Compile Include="Infrastructure\AppController\IRequestHandler.cs" />
+    <Compile Include="Infrastructure\EventAggregator\EventPublisher.cs" />
+    <Compile Include="Infrastructure\EventAggregator\IDisposableHandler.cs" />
+    <Compile Include="Infrastructure\EventAggregator\IEventHandler.cs" />
+    <Compile Include="Infrastructure\EventAggregator\IEventPublisher.cs" />
+    <Compile Include="Infrastructure\IoC\IDependencyResolver.cs" />
+    <Compile Include="Infrastructure\IoC\StructureMap\EventAggregatorInterceptor.cs" />
+    <Compile Include="Infrastructure\IoC\StructureMap\EventBindingInterceptor.cs" />
+    <Compile Include="Infrastructure\IoC\StructureMap\StructureMapDependencyResolver.cs" />
+    <Compile Include="Infrastructure\Presentation\AbstractPresenter.cs" />
+    <Compile Include="Infrastructure\Presentation\CommandExecutor.cs" />
+    <Compile Include="Infrastructure\Presentation\EventBinding\EventBindingFactory.cs" />
+    <Compile Include="Infrastructure\Presentation\EventBinding\Fact.cs" />
+    <Compile Include="Infrastructure\Presentation\EventBinding\IEventBinder.cs" />
+    <Compile Include="Infrastructure\Presentation\EventBinding\IEventBindingFactory.cs" />
+    <Compile Include="Infrastructure\Presentation\EventBinding\Observable.cs" />
+    <Compile Include="Infrastructure\Presentation\EventBinding\WinForms\BindingHelper.cs" />
+    <Compile Include="Infrastructure\Presentation\EventBinding\WinForms\ButtonClickEventBinder.cs" />
+    <Compile Include="Infrastructure\Presentation\EventBinding\WinForms\ButtonEnablinessBinder.cs" />
+    <Compile Include="Infrastructure\Presentation\EventBinding\WinForms\Convensions.cs" />
+    <Compile Include="Infrastructure\Presentation\EventBinding\WinForms\DataGridViewDoubleClickEventBinder.cs" />
+    <Compile Include="Infrastructure\Presentation\EventBinding\WinForms\EnableControlCommand.cs" />
+    <Compile Include="Infrastructure\Presentation\EventBinding\WinForms\ListBoxDoubleClickEventBinder.cs" />
+    <Compile Include="Infrastructure\Presentation\EventBinding\WinForms\ListBoxItemSelectEventBinder.cs" />
+    <Compile Include="Infrastructure\Presentation\EventBinding\WinForms\MenuClickEventBinder.cs" />
+    <Compile Include="Infrastructure\Presentation\EventBinding\WinForms\ViewClosingEventBinder.cs" />
+    <Compile Include="Infrastructure\Presentation\EventBinding\WinForms\WinFormClosingEventData.cs" />
+    <Compile Include="Infrastructure\Presentation\ICommandExecutor.cs" />
+    <Compile Include="Infrastructure\Presentation\IFileDialog.cs" />
+    <Compile Include="Infrastructure\Presentation\IMessageBoxCreator.cs" />
+    <Compile Include="Infrastructure\Presentation\IPresenter.cs" />
+    <Compile Include="Infrastructure\Presentation\IView.cs" />
+    <Compile Include="Infrastructure\Presentation\IViewClosingEventData.cs" />
+    <Compile Include="Infrastructure\Presentation\MessageBoxCreator.cs" />
+    <Compile Include="Presentation\ViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentation\AppShell.resx">
+      <DependentUpon>AppShell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\EditBook\EditBookView.resx">
+      <DependentUpon>EditBookView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\ViewCatalogue\CatalogueView.resx">
+      <DependentUpon>CatalogueView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\DipDemo.Cataloguer.Core.Book.datasource" />
+    <None Include="Properties\DataSources\DipDemo.Cataloguer.Core.Catalogue.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

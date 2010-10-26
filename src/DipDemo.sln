@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DipDemo.Cataloguer", "DipDemo.Cataloguer\DipDemo.Cataloguer.csproj", "{34147678-6E39-4911-9969-4AA246DB2923}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DipDemo.Cataloguer.Tests", "DipDemo.Cataloguer.Tests\DipDemo.Cataloguer.Tests.csproj", "{F6DF8BA3-3927-43A5-B333-F27038CD797A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{83AB2FFE-3092-4BA2-88C0-A44BB7918B17}"
+	ProjectSection(SolutionItems) = preProject
+		..\Inversion of Control.pptx = ..\Inversion of Control.pptx
+		..\TODO.txt = ..\TODO.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{34147678-6E39-4911-9969-4AA246DB2923}.Debug|x86.ActiveCfg = Debug|x86
+		{34147678-6E39-4911-9969-4AA246DB2923}.Debug|x86.Build.0 = Debug|x86
+		{34147678-6E39-4911-9969-4AA246DB2923}.Release|x86.ActiveCfg = Release|x86
+		{34147678-6E39-4911-9969-4AA246DB2923}.Release|x86.Build.0 = Release|x86
+		{F6DF8BA3-3927-43A5-B333-F27038CD797A}.Debug|x86.ActiveCfg = Debug|x86
+		{F6DF8BA3-3927-43A5-B333-F27038CD797A}.Debug|x86.Build.0 = Debug|x86
+		{F6DF8BA3-3927-43A5-B333-F27038CD797A}.Release|x86.ActiveCfg = Release|x86
+		{F6DF8BA3-3927-43A5-B333-F27038CD797A}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
