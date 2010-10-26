@@ -62,6 +62,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoMockingTestFixture.cs" />
+    <Compile Include="EditBookPresenterTests.cs" />
     <Compile Include="StructureMapTestFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
