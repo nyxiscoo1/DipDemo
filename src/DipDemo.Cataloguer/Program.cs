@@ -14,9 +14,9 @@ namespace DipDemo.Cataloguer
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            var appContext = Bootstrapper.Configure();
+            var form = Bootstrapper.Configure();
 
-            Application.Run(appContext);
+            Application.Run(form);
         }
     }
 }

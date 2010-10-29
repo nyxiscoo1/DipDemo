@@ -1,4 +1,6 @@
 ﻿using System.Windows.Forms;
+using DipDemo.Cataloguer.Presentation;
+using DipDemo.Cataloguer.Presentation.ViewCatalogue;
 using StructureMap;
 
 namespace DipDemo.Cataloguer
@@ -7,11 +9,15 @@ namespace DipDemo.Cataloguer
     {
         private static IContainer Container { get; set; }
 
-        public static ApplicationContext Configure()
+        public static Form Configure()
         {
             Container = new Container();
             Container.Configure(c => c.AddRegistry<DefaultRegistry>());
-            return Container.GetInstance<ApplicationContext>();
+
+            var mainForm = Container.GetInstance<AppShell>();
+            Container.GetInstance<CataloguePresenter>();
+
+            return mainForm;
         }
     }
 }

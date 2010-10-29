@@ -4,7 +4,6 @@ using DipDemo.Cataloguer.Infrastructure.EventAggregator;
 using DipDemo.Cataloguer.Infrastructure.IoC;
 using DipDemo.Cataloguer.Infrastructure.IoC.StructureMap;
 using DipDemo.Cataloguer.Infrastructure.Presentation.EventBinding;
-using DipDemo.Cataloguer.RequestHandlers;
 using DipDemo.Cataloguer.Services.Deserializers;
 using DipDemo.Cataloguer.Services.Serializers;
 using StructureMap.Configuration.DSL;
@@ -27,9 +26,6 @@ namespace DipDemo.Cataloguer
 
             For<IApplicationController>()
                 .Use<ApplicationController>();
-
-            ForSingletonOf<ApplicationContext>()
-                .Use<AppContext>();
 
             #endregion
 

@@ -53,7 +53,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppContext.cs" />
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Core\Book.cs" />
     <Compile Include="Core\Catalogue.cs" />

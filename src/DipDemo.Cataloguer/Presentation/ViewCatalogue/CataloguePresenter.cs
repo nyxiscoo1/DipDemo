@@ -40,7 +40,6 @@ namespace DipDemo.Cataloguer.Presentation.ViewCatalogue
             appController.ProcessRequest(new EditBookRequest(new Book()));
         }
 
-
         public void OnEdit()
         {
             appController.ProcessRequest(new EditBookRequest(currentBook.Value));
